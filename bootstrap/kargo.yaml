@@ -6,7 +6,8 @@ metadata:
 spec:
   interval: 10m
   type: oci
-  url: oci://ghcr.io/akuity/kargo-charts/kargo
+  ##url: oci://ghcr.io/akuity/kargo-charts/kargo
+  url: oci://ghcr.io/akuity/kargo-charts
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
