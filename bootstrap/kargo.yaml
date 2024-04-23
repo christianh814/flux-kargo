@@ -1,0 +1,34 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: akuity
+  namespace: flux-system
+spec:
+  interval: 10m
+  type: oci
+  url: oci://ghcr.io/akuity/kargo-charts/kargo
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: kargo
+  namespace: flux-system
+spec:
+  interval: 10m
+  targetNamespace: kargo
+  install:
+    createNamespace: true
+  chart:
+    spec:
+      chart: kargo
+      sourceRef:
+        kind: HelmRepository
+        name: akuity
+  values:
+    api:
+      service:
+        type: NodePort
+        nodePort: 31444
+      adminAccount:
+        passwordHash: '$2a$10$Zrhhie4vLz5ygtVSaif6o.qN36jgs6vjtMBdM6yrU1FOeiAAMMxOm'
+        tokenSigningKey: iwishtowashmyirishwristwatch

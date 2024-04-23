@@ -1,0 +1,27 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: kargo-deploy
+  namespace: flux-system
+spec:
+  interval: 10s
+  url: https://github.com/christianh814/kargo-4-flux
+  ref:
+    branch: main
+  secretRef:
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: kargo-demo
+  namespace: flux-system
+spec:
+  interval: 15s
+  path: ./deploy
+  prune: true
+  targetNamespace: kargo-demo
+  sourceRef:
+    kind: GitRepository
+    name: kargo-deploy
