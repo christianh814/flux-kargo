@@ -15,6 +15,9 @@ metadata:
   name: kargo
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cert-manager
+    - name: argo-rollouts
   interval: 10m
   targetNamespace: kargo
   install:
