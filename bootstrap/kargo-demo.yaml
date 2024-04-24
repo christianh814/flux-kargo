@@ -21,7 +21,6 @@ spec:
   interval: 15s
   path: ./deploy
   prune: true
-  targetNamespace: kargo-demo
   sourceRef:
     kind: GitRepository
     name: kargo-deploy
