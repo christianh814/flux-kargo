@@ -15,12 +15,27 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: kargo-demo
+  name: kargo-project
   namespace: flux-system
 spec:
   prune: true
   interval: 15s
-  path: ./deploy
+  path: ./kargo/project
+  sourceRef:
+    kind: GitRepository
+    name: kargo-deploy
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: kargo-demo
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: kargo-project
+  prune: true
+  interval: 15s
+  path: ./kargo/pipeline
   sourceRef:
     kind: GitRepository
     name: kargo-deploy
