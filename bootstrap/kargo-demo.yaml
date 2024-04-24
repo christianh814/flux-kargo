@@ -20,7 +20,6 @@ metadata:
 spec:
   interval: 15s
   path: ./deploy
-  prune: true
   sourceRef:
     kind: GitRepository
     name: kargo-deploy
