@@ -18,6 +18,7 @@ metadata:
   name: kargo-demo
   namespace: flux-system
 spec:
+  prune: false
   interval: 15s
   path: ./deploy
   sourceRef:
