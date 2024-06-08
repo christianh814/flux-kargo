@@ -5,7 +5,7 @@ metadata:
   name: gobg-uat
   namespace: flux-system
 spec:
-  interval: 10s
+  interval: 10m0s
   ref:
     branch: stage/uat
   secretRef:
@@ -18,7 +18,7 @@ metadata:
   name: gobg-uat
   namespace: flux-system
 spec:
-  interval: 15s
+  interval: 10m0s
   path: ./app/stages/uat
   prune: true
   targetNamespace: gobg-uat

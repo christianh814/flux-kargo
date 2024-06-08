@@ -4,7 +4,7 @@ metadata:
   name: akuity
   namespace: flux-system
 spec:
-  interval: 1m0s
+  interval: 10m0s
   type: oci
   url: oci://ghcr.io/akuity/kargo-charts
 ---
@@ -17,7 +17,7 @@ spec:
   dependsOn:
     - name: cert-manager
     - name: argo-rollouts
-  interval: 1m0s
+  interval: 10m0s
   targetNamespace: kargo
   install:
     createNamespace: true

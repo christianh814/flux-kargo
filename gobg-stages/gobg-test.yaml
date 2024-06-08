@@ -5,7 +5,7 @@ metadata:
   name: gobg-test
   namespace: flux-system
 spec:
-  interval: 10s
+  interval: 10m0s
   ref:
     branch: stage/test
   secretRef:
@@ -18,7 +18,7 @@ metadata:
   name: gobg-test
   namespace: flux-system
 spec:
-  interval: 15s
+  interval: 10m0s
   path: ./app/stages/test
   prune: true
   targetNamespace: gobg-test

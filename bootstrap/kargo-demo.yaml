@@ -5,7 +5,7 @@ metadata:
   name: kargo-deploy
   namespace: flux-system
 spec:
-  interval: 10s
+  interval: 10m0s
   url: https://github.com/christianh814/kargo-4-flux
   ref:
     branch: main
@@ -19,7 +19,7 @@ metadata:
   namespace: flux-system
 spec:
   prune: true
-  interval: 15s
+  interval: 10m0s
   path: ./kargo/project
   sourceRef:
     kind: GitRepository
@@ -34,7 +34,7 @@ spec:
   dependsOn:
     - name: kargo-project
   prune: true
-  interval: 15s
+  interval: 10m0s
   path: ./kargo/pipeline
   sourceRef:
     kind: GitRepository
