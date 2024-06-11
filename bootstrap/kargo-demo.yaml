@@ -47,7 +47,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: kargo-demo
+    - name: kargo-project
   prune: true
   interval: 10m0s
   path: ./kargo/reconciler
