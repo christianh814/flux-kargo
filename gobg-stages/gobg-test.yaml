@@ -18,6 +18,7 @@ metadata:
   name: gobg-test
   namespace: flux-system
 spec:
+  retryInterval: 30s
   interval: 10m0s
   path: ./app/stages/test
   prune: true

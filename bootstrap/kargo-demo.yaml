@@ -18,6 +18,7 @@ metadata:
   name: kargo-project
   namespace: flux-system
 spec:
+  retryInterval: 30s
   prune: true
   interval: 10m0s
   path: ./kargo/project
@@ -31,6 +32,7 @@ metadata:
   name: kargo-demo
   namespace: flux-system
 spec:
+  retryInterval: 30s
   dependsOn:
     - name: kargo-project
   prune: true
@@ -46,6 +48,7 @@ metadata:
   name: kargo-reconciler
   namespace: flux-system
 spec:
+  retryInterval: 30s
   dependsOn:
     - name: kargo-project
   prune: true
