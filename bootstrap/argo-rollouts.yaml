@@ -23,7 +23,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: argoproj
-      version: 2.33.0
+      version: 2.37.7
   targetNamespace: argo-rollouts
   install:
     createNamespace: true
