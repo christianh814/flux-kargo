@@ -8,8 +8,8 @@ spec:
   type: generic
   secretRef:
     name: webhook-token
-    namespace: kargo-demo
   resources:
     - apiVersion: source.toolkit.fluxcd.io/v1
       kind: GitRepository
       name: kargo-deploy
+      namespace: kargo-demo
