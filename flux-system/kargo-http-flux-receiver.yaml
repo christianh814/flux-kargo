@@ -11,5 +11,5 @@ spec:
   resources:
     - apiVersion: source.toolkit.fluxcd.io/v1
       kind: GitRepository
-      name: kargo-deploy
-      namespace: kargo-demo
+      name: gobg-test
+      namespace: flux-system
