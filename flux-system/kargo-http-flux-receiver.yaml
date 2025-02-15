@@ -13,4 +13,3 @@ spec:
     - apiVersion: source.toolkit.fluxcd.io/v1
       kind: GitRepository
       name: kargo-deploy
-      namespace: flux-system
